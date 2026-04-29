@@ -1,1 +1,9 @@
 mshta（microsoft html application）（windows自带的运行.hta文件的程序）（内置VBscript、javascript引擎）
+
+常见提权命令：
+%1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
+1）直接执行batch文件时没有传参，%1为空，故直接忽略执行提权（从mshta开始执行）
+2）batch似乎多个命令可以写一行，window.close的判断是新命令，vb命令执行完即执行
+3）进入管理员权限后可以任意使用系统级PATH环境变量
+4）参数中/c为执行完命令后自动关闭窗口；%0为原始调用路径；%~s0标识原始调用路径的8.3短路径名格式（主体最多8字符，扩展名最多3字符，用点号分隔），可以去空格，正确执行
+5）传给“%~s0”这个文件的第一个参数是::
