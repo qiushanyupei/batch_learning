@@ -1,0 +1,11 @@
+注册表相关命令解析：（配置完注册表需要重启服务或机器生效）
+REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters" /V Type /T REG_SZ /D NTP /F
+REG ADD 注册表内添加/修改+路径+/V添加/修改键值名+/T设置数据类型type+/D设置数据       /F表示force
+注册表支持的常见数据类型：
+REG_SZ	        字符串	固定长度的文本字符串
+REG_DWORD	双字	32位无符号整数（4字节）
+REG_QWORD	四字	64位无符号整数（8字节）
+
+w32Time注册表配置重要数据项：（W32Time基于NTP协议）
+1）\Parameters中Type字段：NTPDS（加入域的客户端）、NTP（未加入域的计算机）
+2）\Config中AnnounceFlags字段：提升作为NTP服务端的可信度
