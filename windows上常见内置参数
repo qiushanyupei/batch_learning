@@ -22,3 +22,6 @@ vShow参数见下：
 5	SW_SHOW	                显示到当前大小和位置
 7	SW_MINIMIZE	        最小化（不激活）
 10	SW_SHOWDEFAULT	        使用程序默认状态
+
+
+执行ntp相关命令需要提权
