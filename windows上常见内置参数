@@ -1,0 +1,24 @@
+常见ProgID（其中都是COM对象（Component Object Model））
+"Scripting.FileSystemObject"    文件系统操作
+"WScript.Shell"	              运行命令、读写注册表
+"Word.Application"	      控制 Microsoft Word
+"Excel.Application"	      控制 Microsoft Excel
+"Shell.Application"	      Shell系统操作
+"InternetExplorer.Application"控制 IE 浏览器
+"ADODB.Connection"	      数据库连接
+VBscript中   ShellExecute 函数：
+object.ShellExecute(
+    sFile,      //要执行文件
+    vArguments, //命令行参数
+    vDirectory, //工作目录，空字符串表示当前目录
+    vOperation, //runas表示用管理员权限打开；edit表示用关联编辑器打开（如txt）；explore表示用资源管理器打开
+    vShow       //窗口显示方式
+)
+vShow参数见下：
+0	SW_HIDE	                隐藏窗口（常用于后台提权）
+1	SW_SHOWNORMAL	        正常显示，激活窗口
+2	SW_SHOWMINIMIZED	最小化显示
+3	SW_SHOWMAXIMIZED	最大化显示
+5	SW_SHOW	                显示到当前大小和位置
+7	SW_MINIMIZE	        最小化（不激活）
+10	SW_SHOWDEFAULT	        使用程序默认状态
