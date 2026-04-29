@@ -1,0 +1,3 @@
+netsh（network shell）配置firewall规则命令示例：
+netsh advfirewall firewall add rule name= NTPSERVER dir=in action=allow protocol=UDP localport=123
+其中advfirewall作为上下文：高级防火墙
